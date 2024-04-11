@@ -4,6 +4,7 @@ import inimigos
 from ataque import calcularAtaque
 from player import Player
 
+
 def resist():
     inimigo = inimigos.inimigoAleatorio()
     resistencia = inimigo["resistencia"]
@@ -45,8 +46,8 @@ def ataque():
                 forcaAtaque = calcularAtaque(player.strength,quantidadeDados)
     
                 if forcaAtaque >= resistencia:
-                    dano = forcaAtaque - resistencia
-                    print("Você causou ",dano," de dano no inimigo!")
+                    dano = int(forcaAtaque - resistencia)
+                    print("Você causou", dano, "de dano no inimigo!")
                     
                     #cheque de resistência
                     if not resistido:
@@ -76,7 +77,7 @@ def ataque():
             #calculando ataque
             forcaAtaque = calcularAtaque(player.strength,quantidadeDados)
             if forcaAtaque >= resistencia:
-                dano = forcaAtaque - resistencia
+                dano = int(forcaAtaque - resistencia)
                 print("Você causou ",dano," de dano no inimigo!")
 
                 if not resistido:
